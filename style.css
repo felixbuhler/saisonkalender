@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #fff;
+    --green: #00ff00;
+    --silver: #848484;
+    --silver-light: rgba(0, 0, 0, 0.1);
+    --black: #242424;
+
+    --border: 1px solid var(--silver);
+
+    --font-accent: "vag-rundschrift-d", sans-serif;
+    --font: 'Inter', sans-serif;
+
+    --padding: 3px;
+}
+
+body,
+html {
+    font-family: var(--font);
+    font-size: 16px;
+    color: var(--silver);
+}
+
+#sticker {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--black);
+    position: fixed;
+    right: 30px;
+    bottom: 30px; z-index: 3;
+}
+
+#saison-table {
+    margin: 100px;
+    margin-bottom: 200vh;
+}
+
+.header {
+    position: sticky;
+    top: 0px;
+    background: var(--white);
+    z-index: 2;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+    border-bottom: var(--border);
+    transition: all 0.1s ease-in-out;
+}
+
+.row:hover {
+    background: rgba(0, 0, 0, 0.075);
+}
+
+.headline {
+    padding: var(--padding);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--border);
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 28px;
+    background: var(--white);
+}
+
+.item-name {
+    padding: var(--padding);
+    display: grid;
+    align-items: center;
+}
+
+.item-months {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.month {
+    border-left: var(--border);
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+}
+
+.month:nth-child(even) {
+    background: var(--silver-light);
+}
+
+.header .month {
+    border-top: var(--border);
+}
+
+.header .month:nth-child(even) {
+    background: initial;
+}
+
+.lager {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--green);
+}
+
+.lager:before {
+    content: "Lager";
+}
+
+.available {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1em;
+    background: var(--green);
+    display: inline-block;
+}
